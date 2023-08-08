@@ -25,17 +25,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
        // // Set the scene to the view
        // sceneView.scene = scene
         
-        let cube = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
+        //let cube = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
+        let sphere = SCNSphere(radius: 0.2)
         
         let material = SCNMaterial()
-        material.diffuse.contents = UIColor.blue
+        material.diffuse.contents = UIImage(named: "art.scnassets/8k_mercury.jpeg")
         
-        cube.materials = [material]
+        sphere.materials = [material]
         print("Something")
         
         let node = SCNNode()
-        node.position = SCNVector3(x: 0, y: 0.1, z: -0.5)
-        node.geometry = cube
+        node.position = SCNVector3(x: 0, y: 0.1, z: -0.7)
+        node.geometry = sphere
         
         sceneView.scene.rootNode.addChildNode(node)
         sceneView.autoenablesDefaultLighting = true
